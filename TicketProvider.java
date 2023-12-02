@@ -3,7 +3,7 @@ import java.util.Collection;
 import java.util.Date;
 
 public class TicketProvider {
-    private final Database database;
+    public final Database database;
     private final PaymentProvider paymentProvider;
 
     /**

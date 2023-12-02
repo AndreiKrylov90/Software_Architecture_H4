@@ -30,8 +30,8 @@ public class Database {
 
     private static int counter = 100;
 
-    private Collection<Ticket> tickets = new ArrayList<>();
-    private Collection<Customer> customers = new ArrayList<>();
+    public Collection<Ticket> tickets = new ArrayList<>();
+    public Collection<Customer> customers = new ArrayList<>();
 
     public Collection<Ticket> getTickets() {
         return tickets;

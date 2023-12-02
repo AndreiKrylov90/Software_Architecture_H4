@@ -24,6 +24,10 @@ public class MobileApp {
     }
 
     public boolean buyTicket(String cardNo){
+        ticketProvider.database.customers.add(customer);
+        Ticket ticket = new Ticket();
+        customer.getTickets().add(ticket);
+        ticketProvider.database.tickets.add(ticket);
         return ticketProvider.buyTicket(customer.getId(), cardNo);
     }
 
