@@ -11,6 +11,8 @@ public class Database {
         Ticket ticket1 = new Ticket();
         Ticket ticket2 = new Ticket();
         Ticket ticket3 = new Ticket();
+    //    сделать через сет
+
         customer1.getTickets().add(ticket1);
         customer1.getTickets().add(ticket2);
         customer1.getTickets().add(ticket3);
