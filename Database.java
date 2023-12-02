@@ -17,8 +17,6 @@ public class Database {
         customers.add(customer4);
         customers.add(customer5);
 
-        Random rand = new Random();
-
         for (Customer customer : customers) {
             for (int i = 0; i < 2; i++) { // You can change the number of tickets per customer here
                 Ticket ticket = new Ticket();
@@ -27,26 +25,6 @@ public class Database {
             }
         }
 
-        // for (int i = 0; i < 10; i++) {
-        //     Ticket ticket = new Ticket();
-        //     int randomIndex = rand.nextInt(customers.size());
-        //     customers.get(randomIndex).getTickets().add(ticket);
-        //     tickets.add(ticket);
-
-        // }
-
-        // Ticket ticket1 = new Ticket();
-        // Ticket ticket2 = new Ticket();
-        // Ticket ticket3 = new Ticket();
-        // // сделать через сет
-
-        // customer1.getTickets().add(ticket1);
-        // customer1.getTickets().add(ticket2);
-        // customer1.getTickets().add(ticket3);
-        // tickets.add(ticket1);
-        // tickets.add(ticket2);
-        // tickets.add(ticket3);
-        // customers.add(customer1);
 
     }
 
@@ -80,4 +58,22 @@ public class Database {
     public int createTicketOrder(int clientId) {
         return ++counter;
     }
+
+    /**
+     * Обновить статус билета по его ID.
+     *
+     * @param ticketId ID билета.
+     * @param newStatus Новый статус билета.
+     * @return true, если обновление прошло успешно, в противном случае - false.
+     */
+    public boolean updateTicketStatus(int ticketId, boolean newStatus) {
+        for (Ticket ticket : tickets) {
+            if (ticket.getId() == ticketId) {
+                ticket.setEnable(newStatus);
+                return true; 
+            }
+        }
+        return false; 
+    }
+
 }
