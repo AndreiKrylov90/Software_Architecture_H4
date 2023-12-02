@@ -11,7 +11,7 @@ class Ticket{
     private int id;
     private int customerId;
     private Date date;
-    private String qrcode;
+    private String qrcode = String.valueOf(Integer.toHexString(id));
 
     private boolean enable = true;
 

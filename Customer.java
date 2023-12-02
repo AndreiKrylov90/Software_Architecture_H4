@@ -24,4 +24,28 @@ public class Customer {
         return id;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Customer ID: ").append(id).append("\n");
+
+        if (tickets != null && !tickets.isEmpty()) {
+            stringBuilder.append("Tickets: ");
+            boolean firstTicket = true;
+
+            for (Ticket ticket : tickets) {
+                if (!firstTicket) {
+                    stringBuilder.append(", ");
+                }
+                stringBuilder.append("Ticket ID: ").append(ticket.getId());
+                firstTicket = false;
+            }
+            stringBuilder.append("\n");
+        } else {
+            stringBuilder.append("No tickets.\n");
+        }
+
+        return stringBuilder.toString();
+    }
+
 }

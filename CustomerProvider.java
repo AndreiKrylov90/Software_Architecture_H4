@@ -1,6 +1,6 @@
 public class CustomerProvider {
 
-    private Database database;
+    public Database database;
 
     public CustomerProvider(Database database) {
         this.database = database;

@@ -26,6 +26,10 @@ public class Program {
 
         busStation.checkTicket("AAA");
 
+
+        System.out.println("Базовые клиенты, которые уже были при начале вызова программы");
+        System.out.println(core.getCustomerProvider().database.getCustomers());
+
     }
 
 }
