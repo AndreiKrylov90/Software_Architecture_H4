@@ -40,6 +40,24 @@ public class TicketProvider {
     }
 
     /**
+     * Поиск билетов только по ID клиента.
+     *
+     * @param clientId ID клиента.
+     * @return Коллекция найденных билетов.
+     */
+    public Collection<Ticket> searchTicket(int clientId) {
+
+        Collection<Ticket> tickets = new ArrayList<>();
+        for (Ticket ticket : database.getTickets()) {
+            if (ticket.getCustomerId() == clientId)
+                tickets.add(ticket);
+        }
+
+        return tickets;
+    }
+
+
+    /**
      * Покупка билета по ID клиента и номеру карты.
      *
      * @param clientId ID клиента.

@@ -1,10 +1,11 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-class Ticket{
+class Ticket {
 
     static int counter = 4000;
 
-    public Ticket(){
+    public Ticket() {
         id = ++counter;
     }
 
@@ -35,7 +36,18 @@ class Ticket{
         return customerId;
     }
 
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
     public Date getDate() {
         return date;
     }
+
+    @Override
+    public String toString() {
+        return "Ticket ID: " + id +
+                "\nCustomer ID: " + customerId;
+    }
+
 }

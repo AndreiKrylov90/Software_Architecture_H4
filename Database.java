@@ -20,11 +20,11 @@ public class Database {
         for (Customer customer : customers) {
             for (int i = 0; i < 2; i++) { // You can change the number of tickets per customer here
                 Ticket ticket = new Ticket();
+                ticket.setCustomerId(customer.getId());
                 customer.getTickets().add(ticket);
                 tickets.add(ticket);
             }
         }
-
 
     }
 
@@ -62,7 +62,7 @@ public class Database {
     /**
      * Обновить статус билета по его ID.
      *
-     * @param ticketId ID билета.
+     * @param ticketId  ID билета.
      * @param newStatus Новый статус билета.
      * @return true, если обновление прошло успешно, в противном случае - false.
      */
@@ -70,10 +70,10 @@ public class Database {
         for (Ticket ticket : tickets) {
             if (ticket.getId() == ticketId) {
                 ticket.setEnable(newStatus);
-                return true; 
+                return true;
             }
         }
-        return false; 
+        return false;
     }
 
 }
